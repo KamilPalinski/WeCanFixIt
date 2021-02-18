@@ -15,4 +15,7 @@ n strona : Kolejne wskazówki dotyczące wymiany koła
 
 Ostatnia strona : Gratulację za wykonane zadanie i przycisk powrotu do głownego menu
 
-Plany
+PLANY NA PRZYSZŁOSĆ :
+- Dodanie logowanie i rejestracji użytkownika
+- Dodanie możliwości tworzenia własnych tutoriali oraz oceny ich przez zarejestrowanych użykowników
+- Dodanie wersji mobilnej aplikacji
