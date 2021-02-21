@@ -1,0 +1,20 @@
+﻿@model WeCanFixIt.Entities.CarsBrandEntity;
+
+
+<div class="form-group">
+    <select id="BrandId" name="Brandlist" asp-for="Id"
+            class="form-control"
+            asp-items="@(new SelectList(@ViewBag.Items, "Id", "Name"))"></select>
+
+
+    <div class="row">
+        <label>AUUU</label>
+        <select id="ModelId" name="Modellist" class="form-control" asp-for="Id"
+                asp-items="@(new SelectList(string.Empty,"ModelId","ModelName"))"></select>
+
+    </div>
+</div>
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.js"></script>z
+    <script type="text/javascript" src="~/js/CarsBrandAndModelList.js"></script>
+   }

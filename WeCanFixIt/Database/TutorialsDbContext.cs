@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using WeCanFixIt.Models;
+using WeCanFixIt.Entities;
 
 namespace WeCanFixIt.Database
 {
@@ -12,11 +12,10 @@ namespace WeCanFixIt.Database
         public TutorialsDbContext(DbContextOptions options) : base(options)
         {
         }
-        public DbSet<TutorialsModel> Cars { get; set; }
+        public DbSet<CarsBrandEntity> Brands { get; set; }
+        public DbSet<CarsModelEntity> Models { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder) {
-
-            base.OnModelCreating(builder);
         }
 
     }
