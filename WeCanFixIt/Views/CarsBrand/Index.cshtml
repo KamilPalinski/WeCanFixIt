@@ -1,20 +1,28 @@
-﻿@model WeCanFixIt.Entities.CarsBrandEntity;
+﻿@model CarsModelModel
 
 
-<div class="form-group">
-    <select id="BrandId" name="Brandlist" asp-for="Id"
-            class="form-control"
-            asp-items="@(new SelectList(@ViewBag.Items, "Id", "Name"))"></select>
-
-
-    <div class="row">
-        <label>AUUU</label>
-        <select id="ModelId" name="Modellist" class="form-control" asp-for="Id"
-                asp-items="@(new SelectList(string.Empty,"ModelId","ModelName"))"></select>
-
-    </div>
-</div>
-@section Scripts {
-    <script src="~/lib/jquery/dist/jquery.js"></script>z
-    <script type="text/javascript" src="~/js/CarsBrandAndModelList.js"></script>
-   }
+    <form asp-controller="CarsBrand" asp-action="Index" role="form">
+        <div class="form-group">                
+            <label class="form-label">Wybierz markę pojazdu</label>
+                    <select id="BrandId" name="BrandId" asp-for="Id"
+                            asp-items="@(new SelectList(@ViewBag.Items, "Id", "Name"))">
+                    </select>  
+        </div>
+        <div class="form-group">
+            <label class="form-label">Wybierz model pojazdu</label>
+                    <select selected disabled method="post" id="ModelId"class="form-control"name="ModelId" onChange="fun(this);" asp-for="Id"
+                            asp-items="@(new SelectList(string.Empty,"ModelId","ModelName"))">
+                    </select>
+        </div>
+        <div class="form-group">
+            <div class="">
+                     <a id="Submit" asp-controller="CarsBrand" asp-action="Categories">
+                         <img src="/assets/right-arrow.svg" alt="Right arrow" class="logo-button"/>
+                     </a>
+             </div>
+        </div>
+    </form>
+    @section Scripts {
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="~/js/CarsBrand.js"></script>
+    }

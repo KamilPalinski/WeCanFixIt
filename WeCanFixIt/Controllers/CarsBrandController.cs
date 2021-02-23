@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WeCanFixIt.Database;
 using WeCanFixIt.Entities;
+using WeCanFixIt.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Http;
 
 namespace WeCanFixIt.Controllers
 {
+   
     public class CarsBrandController : Controller
     {
         private readonly TutorialsDbContext _context;
@@ -27,7 +30,13 @@ namespace WeCanFixIt.Controllers
             return View();
         }
         
+        [HttpGet]
+        public IActionResult Categories()
+        {
+            return View();
+        }
 
+        [HttpGet]
         public JsonResult GetCarsModel(int id)
         {
             List<CarsModelEntity> ModelList = new List<CarsModelEntity>();
@@ -35,9 +44,24 @@ namespace WeCanFixIt.Controllers
             ModelList = _context.Models.Where(x => x.Id==id).ToList();
             ModelList.Insert(0, new CarsModelEntity { ModelId = 0, ModelName = "Wybierz",});
             return Json(new SelectList(ModelList, "ModelId", "ModelName"));
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Index(CarsModelModel list)
+        {
+            if (ModelState.IsValid)
+            {
+                var Show = new CategoriesModel
+                {
+                    Id = list.ModelId,
+                };
+
+               
+                return View(list);
+            }
+            return View(list);
 
         }
-
     
 
     }
