@@ -10,7 +10,16 @@
     text-align:center;
 }
 .caption {
+    text-align:center;
     display: block;
+}
+.alert {
+    text-align:center;
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    opacity: 0.9;
+    border-radius: 30px;
 }
 .logo {
     width: 50px;
@@ -19,9 +28,12 @@
 .logo-button {
     margin-top: 100px;
     width: 200px;
-    height: auto;
     -webkit-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
+}
+.categories-button {
+    margin-top: 100px;
+    width: 100px;
 }
 .logo-button:hover{
     width:180px;
@@ -37,11 +49,19 @@
 .button:hover{
         cursor: pointer;
 }
-.form-group{
+.form-group {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.categories-group{
+  width:100px;
+  margin-right:100px;
+  margin-left:120px;
+}
+.categories-container {
     position:center;
-    text-align:center;
-    display:flex;
-    flex-direction:column;
+  display:flex;
 }
 
 .nav-container {
@@ -137,6 +157,14 @@ select {
     max-width: 400px;
     border-radius: 30px;
     outline:none;
+}
+button {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
 }
 
 

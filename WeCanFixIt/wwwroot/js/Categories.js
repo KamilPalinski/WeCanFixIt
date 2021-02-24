@@ -1,15 +1,19 @@
-﻿
+﻿document.addEventListener("DOMContentLoaded", function () {
+    const endpoint = '/CarsBrand/GetChoosed'
+    $(function () {
+        $.getJSON(endpoint, function (data) {
+            let choosedElement = data.data[0].modelName;
+       
 
-const Categories = {
-    Body: {
-        Wheels: {
-            "49": {
-                Tools: "Klucz do kół, Podnośnik",
-                step1: "lerum Ipsum",
-                step2:"lerum Ipsum"
 
-            }
-        }
-    }
-}
-console.log(window.btn);
+
+
+
+
+        })
+       
+
+    })
+ 
+
+});

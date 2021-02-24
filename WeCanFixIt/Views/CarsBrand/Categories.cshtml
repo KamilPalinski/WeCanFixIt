@@ -1,5 +1,33 @@
-﻿<h1>ELO</h1>
+﻿@model CategoriesModel
+<div class="categories-container">
+    <div class="categories-group">
+        <button id="body" >
+            <img src="~/assets/car-body.svg" class="categories-button" alt="car-body" />
+            <span class="caption">Karoseria</span>
+        </button>
+    </div>
+    <div class="categories-group">
+        <button id="suspension" >
+            <img src="~/assets/supension.svg" class="categories-button" alt="suspension" />
+            <span class="caption">Układ jezdy</span>
+        </button>
+        </div>
+        <div class="categories-group">
+            <button id="chip" >
+                <img src="~/assets/chip.svg" class="categories-button" alt="chip" />
+                <span class="caption">Elektronika</span>
+            </button>
+        </div>
+        <div class="categories-group">
+            <button id="engine">
+                <img src="~/assets/engine.svg" class="categories-button" alt="engine" />
+                <span class="caption">Silnik</span>
+            </button>
+        </div>
+    </div>
+<div class="details"style="display: none"></div>
+
 @section Scripts {
-    <script type="text/javascript" src="~/js/CarsBrand.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="~/js/Categories.js"></script>
 }

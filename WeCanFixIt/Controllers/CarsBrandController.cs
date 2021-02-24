@@ -34,10 +34,11 @@ namespace WeCanFixIt.Controllers
         public IActionResult Categories()
         {
             return View();
+           
         }
 
         [HttpGet]
-        public JsonResult GetCarsModel(int id)
+        public IActionResult GetCarsModel(int id)
         {
             List<CarsModelEntity> ModelList = new List<CarsModelEntity>();
 
@@ -47,22 +48,29 @@ namespace WeCanFixIt.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Index(CarsModelModel list)
+        public IActionResult Index([FromForm] CarsBrandEntity list)
         {
             if (ModelState.IsValid)
             {
-                var Show = new CategoriesModel
+                var choosedElement = new CategoriesEntity
                 {
-                    Id = list.ModelId,
+                    ModelName = HttpContext.Request.Form["ModelId"],
                 };
-
-               
-                return View(list);
+                _context.Database.ExecuteSqlRaw("TRUNCATE TABLE [Categories]");
+                _context.Add(choosedElement);
+                _context.SaveChanges();
+                return RedirectToAction("Categories");
             }
             return View(list);
 
         }
-    
+
+        [HttpGet]
+        public IActionResult GetChoosed()
+        {
+            return Json(new { data =_context.Categories.ToList()  });
+        }
+
 
     }
 }
