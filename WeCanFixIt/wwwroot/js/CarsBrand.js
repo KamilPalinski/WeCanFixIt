@@ -1,5 +1,7 @@
 ﻿const endpoint = 'CarsBrand/GetCarsModel';
+
 $(function () {
+
     $('#Submit').click(function () {
         if (document.getElementById("BrandId").value === "0") {
             $('#error-brand-and-model').css("display", "flex");
@@ -8,6 +10,7 @@ $(function () {
             $('#Submit').prop("type", "submit");
         }
     })
+
     $('#BrandId').change(function () {
         $('#ModelId').prop("disabled", false);
         $('#Submit').prop("disabled", false);

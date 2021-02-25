@@ -7,30 +7,35 @@
     <link rel="stylesheet" href="/css/site.css"/>
 </head>
 <body>
+
     <div class="container">
         <header>
+
             <nav class="nav-container">
                 <div class="logo-container">
                     <a asp-controller="Home" asp-action="Index">
-                        <img src="~/assets/home.svg" class="logo" alt="logo" />
-                        <span class="caption">WeCanFixIt</span>
+                      <img src="~/assets/home.svg" class="logo" alt="logo" />
+                      <span class="caption">WeCanFixIt</span>
                     </a>
                 </div>
-                    <div class="navelements-container">
-                        <a asp-controller="CarsBrand" asp-action="Index">
-                            <img src="~/assets/hammer.svg" class="logo" alt="logo" />
-                            <span class="caption">FixIt</span>
-                        </a>
-                    </div>
-                    <div class="navelements-container">
-                        <a asp-controller="About" asp-action="Index">
-                            <img src="~/assets/info.svg" class="logo" alt="logo" />
-                            <span class="caption">Info</span>
-                        </a>
-                    </div>
-            </nav>
 
+                <div class="navelements-container">
+                    <a asp-controller="CarsBrand" asp-action="Index">
+                      <img src="~/assets/hammer.svg" class="logo" alt="logo" />
+                      <span class="caption">FixIt</span>
+                    </a>
+                </div>
+
+                <div class="navelements-container">
+                    <a asp-controller="About" asp-action="Index">
+                      <img src="~/assets/info.svg" class="logo" alt="logo" />
+                      <span class="caption">Info</span>
+                     </a>
+                </div>
+
+            </nav>
         </header>
+
         <div class="main-container">
             <main role="main" class="pb-3">
                 @RenderBody()
@@ -42,9 +47,9 @@
                 &copy; 2021 - WeCanFixIt - Kamil Paliński
             </div>
         </footer>
+
     </div>
         <script src="~/js/site.js" asp-append-version="true"></script>
         @RenderSection("Scripts", required: false)
-
 </body>
 </html>
