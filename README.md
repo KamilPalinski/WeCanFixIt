@@ -16,7 +16,7 @@ Przycisk zakończenia
 
 Ostatnia strona : Gratulację za wykonane zadanie i przycisk powrotu do głownego menu
 
-PLANY NA PRZYSZŁOSĆ :
+# PLANY NA PRZYSZŁOSĆ :
 - Dodanie logowanie i rejestracji użytkownika
 - Dodanie możliwości tworzenia własnych tutoriali oraz oceny ich przez zarejestrowanych użykowników
 - Dodanie wersji mobilnej aplikacji
