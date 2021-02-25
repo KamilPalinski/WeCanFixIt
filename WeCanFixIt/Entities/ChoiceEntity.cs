@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WeCanFixIt.Entities
 {
-    public class CategoriesEntity
+    public class ChoiceEntity
     {
         [Key]
         public string ModelName { get; set; }

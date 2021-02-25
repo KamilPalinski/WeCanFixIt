@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WeCanFixIt.Models
 {
-    public class CategoriesModel
+    public class ChoiceModel
     {
         public string ModelName { get; set; }
         
