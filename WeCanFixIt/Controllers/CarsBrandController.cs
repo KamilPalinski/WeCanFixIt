@@ -37,6 +37,16 @@ namespace WeCanFixIt.Controllers
            
         }
 
+        [HttpPost]
+        public IActionResult Result(ResultEntity model)  
+       {
+            var model1 = model.Action;
+            ViewBag.items = _context.Result.Where(x => x.Action == model1).ToList();
+            return View();
+        }
+
+
+
         [HttpGet]
         public IActionResult GetCarsModel(int id)
         {
@@ -46,6 +56,13 @@ namespace WeCanFixIt.Controllers
             ModelList.Insert(0, new CarsModelEntity { ModelId = 0, ModelName = "Wybierz",});
             return Json(new SelectList(ModelList, "ModelId", "ModelName"));
         }
+
+        [HttpGet]
+        public IActionResult GetChoosed()
+        {
+            return Json(new {data = _context.Categories.ToList()});
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Index([FromForm] CarsBrandEntity list)
@@ -63,12 +80,6 @@ namespace WeCanFixIt.Controllers
             }
             return View(list);
 
-        }
-
-        [HttpGet]
-        public IActionResult GetChoosed()
-        {
-            return Json(new { data =_context.Categories.ToList()  });
         }
 
 

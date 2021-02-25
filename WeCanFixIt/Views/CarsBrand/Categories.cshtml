@@ -1,7 +1,7 @@
-﻿@model CategoriesModel
+﻿@model ResultModel
 <div class="categories-container">
     <div class="categories-group">
-        <button id="body" >
+        <button id="body">
             <img src="~/assets/car-body.svg" class="categories-button" alt="car-body" />
             <span class="caption">Karoseria</span>
         </button>
@@ -12,20 +12,59 @@
             <span class="caption">Układ jezdy</span>
         </button>
         </div>
-        <div class="categories-group">
-            <button id="chip" >
+    <div class="categories-group">
+            <button id="chip">
                 <img src="~/assets/chip.svg" class="categories-button" alt="chip" />
                 <span class="caption">Elektronika</span>
             </button>
-        </div>
-        <div class="categories-group">
+    </div>
+    <div class="categories-group">
             <button id="engine">
                 <img src="~/assets/engine.svg" class="categories-button" alt="engine" />
                 <span class="caption">Silnik</span>
             </button>
-        </div>
     </div>
-<div class="details"style="display: none"></div>
+</div>
+<div class="details-container">
+    <form method="POST" asp-controller="CarsBrand" asp-action="Result" role="form">
+        <div id="body-details" class="categories-group" style="display:none">
+            <div class="form-group">
+                <label asp-for="Action" class="control-label">Karoseria</label>
+                <select id="bodyId" asp-for="Action" class="form-control">
+                    Wybierz
+                </select>
+                </div>
+            </div>
+        <div id="suspension-details" style="display:none">
+            <div class="form-group">
+                <label asp-for="Action" class="control-label">Układ jezdny</label>
+                <select id="suspensionId" asp-for="Action" class="form-control">
+                    Wybierz
+                </select>
+            </div>
+        </div>
+            <div id="chip-details" class="categories-group" style="display:none">
+                <div class="form-group">
+                    <label asp-for="Action" class="control-label">Elektronika</label>
+                    <select id="chipId"  asp-for="Action" class="form-control">
+                        Wybierz
+                    </select>
+                </div>
+            </div>
+            <div id="engine-details" class="categories-group" style="display:none">
+                <div class="form-group">
+                    <label asp-for="Action" class="control-label">Silnik</label>
+                    <select id="engineId" asp-for="Action" class="form-control">
+                        Wybierz
+                    </select>
+                </div>
+            </div>
+
+            <button id="Submit" type="submit">
+                <img src="/assets/right-arrow.svg" alt="Right arrow" class="logo-button" />
+            </button>
+</form>
+</div>
 
 @section Scripts {
     <script src="~/lib/jquery/dist/jquery.js"></script>

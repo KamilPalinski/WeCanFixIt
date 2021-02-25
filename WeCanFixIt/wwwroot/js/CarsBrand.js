@@ -8,7 +8,6 @@ $(function () {
             $('#Submit').prop("type", "submit");
         }
     })
-
     $('#BrandId').change(function () {
         $('#ModelId').prop("disabled", false);
         $('#Submit').prop("disabled", false);
@@ -18,14 +17,12 @@ $(function () {
             let items = '';
             $('#ModelId').empty();
             $.each(data, function (i, model) {
-                items += "<option value='" + model.text + "'>" + model.text + "</option>";
+                items +="<option value='"+model.text+"'>" + model.text + "</option>";
             });
             $('#ModelId').html(items);
         })
     })
 });
-
-console.log(document.getElementById("BrandId").value);
 
 
 
