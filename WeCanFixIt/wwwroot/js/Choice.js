@@ -12,10 +12,10 @@ let clicked = false;
             $('#chip-details').css("display", "none");
             $('#engine-details').css("display", "none");
             $('#bodyId').empty();
-            let items = `<option value='${data.data[0].modelName.trim()}WymianaDrzwi'>Wymiana drzwi</option>
-                         <option value='${data.data[0].modelName.trim()}WymianaLamp'>Wymiana lamp</option>
-                         <option value='${data.data[0].modelName.trim()}WymianaLusterek'>Wymiana lusterek</option>
-                         <option value='${data.data[0].modelName.trim()}WymianaSzyb'>Wymiana szyb</option>`;
+            let items = `<option value='${data.data[0].modelName.trim()}Drzwi'>Wymiana drzwi</option>
+                         <option value='${data.data[0].modelName.trim()}Lampy'>Wymiana lamp</option>
+                         <option value='${data.data[0].modelName.trim()}Lusterka'>Wymiana lusterek</option>
+                         <option value='${data.data[0].modelName.trim()}Szyby'>Wymiana szyb</option>`;
             $('#bodyId').html(items);
         })
 
@@ -28,10 +28,10 @@ let clicked = false;
             $('#chip-details').css("display", "none");
             $('#engine-details').css("display", "none");
             $('#suspensionId').empty();
-            let items = `<option value='${data.data[0].modelName.trim()}WymianaKola'>Wymiana Kół</option>
-                         <option value='${data.data[0].modelName.trim()}WymianaArmortyzatora'>Wymiana Armortyzatora</option>
-                         <option value='${data.data[0].modelName.trim()}WymianaSprezyn'>Wymiana Sprezyn</option>
-                         <option value='${data.data[0].modelName.trim()}WymianaHamulców'>Wymiana Hamulców</option>`;
+            let items = `<option value='${data.data[0].modelName.trim()}Kola'>Wymiana Kół</option>
+                         <option value='${data.data[0].modelName.trim()}Armortyzatory'>Wymiana Armortyzatora</option>
+                         <option value='${data.data[0].modelName.trim()}Sprezyny'>Wymiana Sprezyn</option>
+                         <option value='${data.data[0].modelName.trim()}Hamulce'>Wymiana Hamulców</option>`;
             $('#suspensionId').html(items);
         })
 
@@ -44,10 +44,10 @@ let clicked = false;
             $('#body-details').css("display", "none");
             $('#engine-details').css("display", "none");
             $('#chipId').empty();
-            let items = `<option value='${data.data[0].modelName.trim()}WymianaEcu'>Wymiana ECU</option>
-                         <option value='${data.data[0].modelName.trim()}KasowanieBledow'>Kasowanie błędów</option>
-                         <option value='${data.data[0].modelName.trim()}WymianaCzujnikow'>Wymiana czujników</option>
-                          <option value='${data.data[0].modelName.trim()}WymianaRadia'>Wymiana radia</option>`;
+            let items = `<option value='${data.data[0].modelName.trim()}Ecu'>Wymiana ECU</option>
+                         <option value='${data.data[0].modelName.trim()}Bledy'>Kasowanie błędów</option>
+                         <option value='${data.data[0].modelName.trim()}Czujniki'>Wymiana czujników</option>
+                          <option value='${data.data[0].modelName.trim()}Radio'>Wymiana radia</option>`;
             $('#chipId').html(items);
         })
 
@@ -60,10 +60,10 @@ let clicked = false;
             $('#suspension-details').css("display", "none");
             $('#body-details').css("display", "none");
             $('#engineId').empty();
-            let items = `<option value='${data.data[0].modelName.trim()}WymianaRozrzadu'>Wymiana rozrządu</option>
-                         <option value='${data.data[0].modelName.trim()}KasowanieFiltrow'>Wymiana filtrów</option>
-                         <option value='${data.data[0].modelName.trim()}Wymianaoleju'>Wymiana oleju</option>
-                         <option value='${data.data[0].modelName.trim()}Wymianasprzegla'>Wymiana sprzęgła</option>`;
+            let items = `<option value='${data.data[0].modelName.trim()}Rozrzad'>Wymiana rozrządu</option>
+                         <option value='${data.data[0].modelName.trim()}Filtry'>Wymiana filtrów</option>
+                         <option value='${data.data[0].modelName.trim()}Olej'>Wymiana oleju</option>
+                         <option value='${data.data[0].modelName.trim()}Sprzeglo'>Wymiana sprzęgła</option>`;
             $('#engineId').html(items);
     
         })

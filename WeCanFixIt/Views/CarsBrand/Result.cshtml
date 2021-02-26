@@ -1,9 +1,35 @@
 ﻿@model ResultModel
+    <div class="text-center">
+        <h1>FixIt</h1>
+        @foreach (var item in ViewBag.items)
+        {
+            if (@ViewBag.items?[0]?.Step == item.Step)
+            {
+                <h2>Potrzebne Narzędzia</h2>
+                <label>@item.Step</label>
+            }
+            else
+            {
+                <div class="result-group">
+                  <label>@item.Step</label>
+                  <input type="checkbox" name="@item.Step" />
+                </div>
+            }
+        }
+    
+        <div class="progressbar-container">
+            <div class="progressbar-bar"></div>
+            <div class="progressbar-label"></div>
+        </div>
 
-    @foreach (var item in ViewBag.Items)
-    {
-<tr>
-    <td>@item.Step</td>
-</tr>
+        <div class="modal">
+            <div class="modal-content">
+                <h1>Gratulacje !!!</h1>
+                <a asp-controller="Home" asp-action="Index">Powrót</a>
+            </div>
+        </div>
+    </div>
+    @section Scripts {
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="~/js/Result.js"></script>
     }
-   
