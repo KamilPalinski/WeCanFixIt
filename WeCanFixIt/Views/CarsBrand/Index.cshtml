@@ -1,5 +1,5 @@
 ﻿@model CarsModelModel
-        <div id="error-brand-and-model" class="alert" style="display: none">Wybierz markę i model pojazdu</div>
+        <div id="error-brand-and-model" class="alert" hidden>Wybierz markę i model pojazdu</div>
 
         <form method="POST" asp-controller="CarsBrand" asp-action="Index" role="form">
             <div class="form-group">
@@ -11,14 +11,14 @@
 
             <div class="form-group">
                 <label class="form-label">Wybierz model pojazdu</label>
-                <select selected disabled id="ModelId" class="form-control" name="ModelId" asp-for="Id"
+                <select selected disabled id="ModelId" name="ModelId" asp-for="Id"
                         asp-items="@(new SelectList(string.Empty,"ModelId","ModelName"))">
                 </select>
             </div>
 
             <div class="form-group">
                 <button id="Submit" type="button">
-                    <img src="/assets/images/left-arrow.svg" alt="Right arrow" class="logo-button" />
+                    <img src="/assets/images/next.svg" alt="Right arrow" class="logo-button" />
                 </button>
             </div>
 

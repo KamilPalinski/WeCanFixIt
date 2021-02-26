@@ -1,73 +1,69 @@
 ﻿@model ResultModel
+    <div id="error-categories" class="alert" style="display: none">Wybierz Kategorie</div>
 
-        <div class="categories-container">
-           <div class="categories-group">
-             <button id="body">
-               <img src="/assets/images/car-body.svg" class="categories-button" alt="car-body" />
-               <span class="caption">Karoseria</span>
-              </button>
+
+    <div class="categories-container">
+        <div class="categories-group">
+            <button id="body">
+                <img src="/assets/images/car-body.svg" class="categories-button" alt="car-body" />
+                <span class="caption">Karoseria</span>
+            </button>
         </div>
 
-           <div class="categories-group">
-              <button id="suspension" >
+        <div class="categories-group">
+            <button id="suspension">
                 <img src="~/assets/images/supension.svg" class="categories-button" alt="suspension" />
                 <span class="caption">Układ jezdy</span>
-              </button>
-           </div>
+            </button>
+        </div>
 
-           <div class="categories-group">
-              <button id="chip">
+        <div class="categories-group">
+            <button id="chip">
                 <img src="~/assets/images/chip.svg" class="categories-button" alt="chip" />
                 <span class="caption">Elektronika</span>
-              </button>
-           </div>
+            </button>
+        </div>
 
-           <div class="categories-group">
-              <button id="engine">
+        <div class="categories-group">
+            <button id="engine">
                 <img src="~/assets/images/engine.svg" class="categories-button" alt="engine" />
                 <span class="caption">Silnik</span>
-              </button>
-           </div>
+            </button>
+        </div>
+    </div>
+    <form method="POST" asp-controller="CarsBrand" asp-action="Result" role="form">
+        <div id="body-details" class="form-group" style="display:none">
+            <label asp-for="Action" class="form-label">Karoseria</label>
+            <select id="bodyId" asp-for="Action"></select>
         </div>
 
-        <div class="details-container">
-            <form method="POST" asp-controller="CarsBrand" asp-action="Result" role="form">
-               <div id="body-details" class="categories-group" style="display:none">
-                 <div class="form-group">
-                   <label asp-for="Action" class="control-label">Karoseria</label>
-                   <select id="bodyId" asp-for="Action" class="form-control"></select>
-                 </div>
-               </div>
-
-               <div id="suspension-details" style="display:none">
-                 <div class="form-group">
-                   <label asp-for="Action" class="control-label">Układ jezdny</label>
-                   <select id="suspensionId" asp-for="Action" class="form-control"></select>
-                 </div>
-               </div>
-
-               <div id="chip-details" class="categories-group" style="display:none">
-                 <div class="form-group">
-                   <label asp-for="Action" class="control-label">Elektronika</label>
-                   <select id="chipId"  asp-for="Action" class="form-control"></select>
-                 </div>
-               </div>
-
-               <div id="engine-details" class="categories-group" style="display:none">
-                 <div class="form-group">
-                   <label asp-for="Action" class="control-label">Silnik</label>
-                   <select id="engineId" asp-for="Action" class="form-control"></select>
-                 </div>
-               </div>
-
-               <button id="Submit" type="submit">
-                 <img src="/assets/images/right-arrow.svg" alt="Right arrow" class="logo-button" />
-               </button>
-
-            </form>
-
+        <div id="suspension-details" class="form-group" style="display:none">
+            <label asp-for="Action" class="form-label">Układ jezdny</label>
+            <select id="suspensionId" asp-for="Action"></select>
         </div>
- @section Scripts {
-    <script src="~/lib/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="~/js/Choice.js"></script>
-}
+
+        <div id="chip-details" class="form-group" style="display:none">
+            <label asp-for="Action" class="form-label">Elektronika</label>
+            <select id="chipId" asp-for="Action"></select>
+        </div>
+
+        <div id="engine-details" class="form-group" style="display:none">
+            <label asp-for="Action" class="form-label">Silnik</label>
+            <select id="engineId" asp-for="Action"></select>
+        </div>
+
+        <div class="form-group">
+            <button id="submit1" type="button">
+                <img src="/assets/images/next.svg" alt="Right arrow" class="logo-button" />
+            </button>
+        </div>
+
+    </form>
+
+
+
+
+    @section Scripts {
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="~/js/Choice.js"></script>
+    }

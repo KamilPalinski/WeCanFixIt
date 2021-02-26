@@ -63,22 +63,28 @@ namespace WeCanFixIt.Controllers
                 {
                     ModelName = HttpContext.Request.Form["ModelId"],
                 };
-                _context.Database.ExecuteSqlRaw("TRUNCATE TABLE [Categories]");
+                _context.Database.ExecuteSqlRaw("TRUNCATE TABLE [Choice]");
                 _context.Add(choosedElement);
                 _context.SaveChanges();
-                return RedirectToAction("Categories");
+                return RedirectToAction("Choice");
             }
             return View(list);
 
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Result(ResultEntity result)
         {
-            string action = result.Action;
-            ViewBag.items = _context.Result.Where(x => x.Action == action).ToList();
-            return View();
+            if (ModelState.IsValid)
+            {
+                string action = result.Action;
+                ViewBag.items = _context.Result.Where(x => x.Action == action).ToList();
+                return View();
+            }
+            return View(result);
         }
+            
 
 
     }

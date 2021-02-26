@@ -1,9 +1,12 @@
-﻿const endpoint = '/CarsBrand/GetChoosed'
-
-$(function () {
-    $.getJSON(endpoint, function (data) {
+﻿
+const endpoint = '/CarsBrand/GetChoosed'
+let clicked = false;
+    $(function(){
+      $.getJSON(endpoint, function (data) {
 
         $('#body').on('click', function () {
+            clicked = true;
+            $('#error-categories').css("display", "none");
             $('#body-details').css("display", "flex");
             $('#suspension-details').css("display", "none");
             $('#chip-details').css("display", "none");
@@ -17,6 +20,9 @@ $(function () {
         })
 
         $('#suspension').on('click', function () {
+            clicked = true;
+            $('#error-categories').css("display", "none");
+            $('#submit').css("display", "flex");
             $('#suspension-details').css("display", "flex");
             $('#body-details').css("display", "none");
             $('#chip-details').css("display", "none");
@@ -30,6 +36,9 @@ $(function () {
         })
 
         $('#chip').on('click', function () {
+            clicked = true;
+            $('#error-categories').css("display", "none");
+            $('#submit').css("display", "flex");
             $('#chip-details').css("display", "flex");
             $('#suspension-details').css("display", "none");
             $('#body-details').css("display", "none");
@@ -43,6 +52,9 @@ $(function () {
         })
 
         $('#engine').on('click', function () {
+            clicked = true;
+            $('#error-categories').css("display", "none");
+            $('#submit').css("display", "flex");
             $('#engine-details').css("display", "flex");
             $('#chip-details').css("display", "none");
             $('#suspension-details').css("display", "none");
@@ -53,9 +65,21 @@ $(function () {
                          <option value='${data.data[0].modelName.trim()}Wymianaoleju'>Wymiana oleju</option>
                          <option value='${data.data[0].modelName.trim()}Wymianasprzegla'>Wymiana sprzęgła</option>`;
             $('#engineId').html(items);
+    
+        })
+
+      })
+        console.log(clicked);
+        $('#submit1').on("click", function () {
+            if (clicked === false) {
+                $('#error-categories').css("display", "flex");
+            }
+            else{
+                $('#submit1').prop("type", "submit");
+            }
         })
     })
-})
+
 
 
         

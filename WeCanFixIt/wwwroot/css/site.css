@@ -64,17 +64,6 @@ button {
     margin: auto;
 }
 
-.details-container {
-    background-color: rgba(163,227,100,.8);
-    border: 10px solid;
-    border-color: #A3E364;
-    border-radius: 0px 30px 2px 30px;
-    display: flex;
-    margin: 50px 50px 0px 50px;
-    min-height: 300px;
-    position: center;
-}
-
 .form-label {
     margin-top: 50px;
     font-size: 40px;
@@ -142,7 +131,7 @@ html {
     box-shadow: 5px 10px #888888;
     color: bisque;
     margin:20px 20px 20px 20px;
-    min-height: 700px;
+    min-height: 900px;
 }
 
 .nav-container {
